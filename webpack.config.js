@@ -4,13 +4,12 @@ const BundleAnalyzerPlugin =
 const config = {
   mode: 'development',
 
-  entry: './src/main.ts',
+  entry: './src/index.ts',
 
   module: {
     rules: [
       {
         test: /\.(tsx|ts)$/,
-
         use: 'ts-loader',
       },
     ],
@@ -25,16 +24,13 @@ const config = {
   },
 
   target: ['web', 'es5'],
-
 };
 module.exports = (env, argv) => {
-  console.log(argv);
   if (argv.mode !== 'production') {
     config.target = 'web';
   }
   if (argv.mode === 'production') {
     config.plugins.push(new BundleAnalyzerPlugin());
-    
   }
   return config;
 };
