@@ -1,8 +1,15 @@
 export class Vec2 {
-  constructor(public x: number, public y: number) {}
+  constructor(x: number, y: number) {
+    this.x = x;
+    this.y = y;
+  }
+  public x: number;
+  public y: number;
+
   set(x: number, y: number): this {
     this.x = x;
     this.y = y;
+
     return this;
   }
   clone(): Vec2 {
@@ -70,5 +77,11 @@ export class Vec2 {
   static degree(degree: number): Vec2 {
     const radian = (degree / 180) * Math.PI;
     return this.radian(radian);
+  }
+  static setMagnitude(vec: Vec2, num: number): Vec2 {
+    const { x, y, magnitude } = vec;
+    return magnitude === 0
+      ? vec
+      : new Vec2(x / (magnitude / num), y / (magnitude / num));
   }
 }
