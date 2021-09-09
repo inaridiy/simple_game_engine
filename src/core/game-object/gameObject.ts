@@ -1,6 +1,7 @@
 import { IComponent } from '../component';
+import { EventDispatcher } from '../event';
 
-class GameObject {
+export class GameObject extends EventDispatcher<GameObject> {
   components: IComponent[] = [];
   addComponent(component: IComponent): void {
     this.components.push(component);
