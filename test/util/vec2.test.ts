@@ -1,4 +1,4 @@
-import { Vec2 } from '../../src/util/vector2';
+import { Vec2 } from '../../src/util';
 
 describe('vector2のテスト', () => {
   test('constructorのテスト', () => {
