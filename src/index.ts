@@ -1,1 +1,2 @@
-console.log('Hello Typescript');
+export * from './core';
+export * as util from './util';
