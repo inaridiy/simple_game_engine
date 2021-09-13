@@ -1,4 +1,4 @@
-import { ISystem } from './';
+import { ISystem } from '.';
 
 export class SystemManager {
   constructor() {

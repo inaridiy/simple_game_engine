@@ -1,6 +1,6 @@
 import { IComponent } from '../component';
 import { EventDispatcher } from '../event';
-import { generateId } from '../../util';
+import { generateId } from '../../../util';
 
 export class Entity extends EventDispatcher<Entity> {
   constructor(tags?: string[], manualId?: string) {

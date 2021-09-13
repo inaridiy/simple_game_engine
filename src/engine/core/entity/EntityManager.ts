@@ -1,4 +1,4 @@
-import { Entity } from './';
+import { Entity } from '.';
 
 export class EntityManager {
   constructor() {

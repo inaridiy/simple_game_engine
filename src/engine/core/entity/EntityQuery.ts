@@ -1,4 +1,4 @@
-import { Entity } from './';
+import { Entity } from '.';
 import { IComponent } from '../component';
 
 type TComponents = { [s: string]: IComponent };
