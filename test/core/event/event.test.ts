@@ -1,4 +1,4 @@
-import { EventDispatcher, GameEvent } from '../../../src/core/event';
+import { EventDispatcher, GameEvent } from '../../../src/engine/core/event';
 const spyLog = jest.spyOn(console, 'log');
 spyLog.mockImplementation((x: string) => x);
 

@@ -1,6 +1,6 @@
 import { EntityManager } from '../entity';
 
+export * from './SystemManager';
 export interface ISystem {
-  init(entityManager: EntityManager): void;
   update(entityManager: EntityManager): void;
 }
