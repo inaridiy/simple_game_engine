@@ -12,6 +12,9 @@ export class EntityManager {
   getEntity(id: string): Entity | null {
     return this.entities.get(id) || null;
   }
+  get entitiesAry(): Entity[] {
+    return Array.from(this.entities.values());
+  }
   delete(id: string): void {
     this.entities.delete(id);
   }

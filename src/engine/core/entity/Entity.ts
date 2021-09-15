@@ -23,6 +23,9 @@ export class Entity extends EventDispatcher<Entity> {
   get tags(): string[] {
     return Array.from(this.tagsSet);
   }
+  getComponent<T extends IComponent = IComponent>(type: string): T | null {
+    return (this.components.get(type) as T) ?? null;
+  }
   addComponents(...components: IComponent[]): this {
     this.addComponentsByArray(components);
     return this;

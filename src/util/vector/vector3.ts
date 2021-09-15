@@ -1,3 +1,5 @@
+import { Vec2 } from './';
+
 export class Vec3 {
   constructor(public x: number, public y: number, public z: number) {}
   set(x: number, y: number, z: number): this {
@@ -53,6 +55,9 @@ export class Vec3 {
   get reverseY(): Vec3 {
     this.y *= -1;
     return this;
+  }
+  get vec2(): Vec2 {
+    return new Vec2(this.x, this.y);
   }
   static add(v1: Vec3, v2: Vec3): Vec3 {
     return v1.clone().add(v2);

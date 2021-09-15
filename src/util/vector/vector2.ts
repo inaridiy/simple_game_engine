@@ -1,3 +1,5 @@
+import { Vec3 } from './';
+
 export class Vec2 {
   constructor(x: number, y: number) {
     this.x = x;
@@ -54,6 +56,9 @@ export class Vec2 {
   }
   get angle(): number {
     return Math.atan2(this.y, this.x);
+  }
+  get vec3(): Vec3 {
+    return new Vec3(this.x, this.y, 0);
   }
   static add(v1: Vec2, v2: Vec2): Vec2 {
     return v1.clone().add(v2);
