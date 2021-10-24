@@ -1,4 +1,4 @@
-import { generateId } from '../../src/util';
+import { generateId } from '../../src/util/generateId';
 
 test('id生成のテスト', () => {
   const qty = 1000;
