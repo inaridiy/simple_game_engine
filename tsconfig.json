@@ -1,14 +1,13 @@
 {
   "compilerOptions": {
-    "target": "ES6",
-
-    "module": "es2015",
-
+    "target": "ES2015",
+    "module": "umd",
     "moduleResolution": "node",
     "skipLibCheck":true,
     "allowSyntheticDefaultImports":true,
     "experimentalDecorators":true,
     "strict": true,
+    "outDir": "./dist",
     "lib": [
       "ES2020",
       "DOM"
