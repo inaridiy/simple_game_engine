@@ -14,7 +14,7 @@ export class EventDispatcher<T> {
     if (!this._eventListeners.has(eventType)) {
       this._eventListeners.set(eventType, [listener]);
     } else {
-      this._eventListeners.get(eventType)?.push(listener);
+      (this._eventListeners.get(eventType) as EventLitener[]).push(listener);
     }
   }
 
@@ -28,6 +28,8 @@ export class EventDispatcher<T> {
       ) as EventLitener[]) {
         listener(event);
       }
+    } else {
+      throw new Error(`${eventType} is not registered`);
     }
   }
 
