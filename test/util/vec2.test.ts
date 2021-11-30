@@ -1,4 +1,4 @@
-import { Vec2 } from '../../src/util/vector';
+import { Vec2, Vec3 } from '../../src/util/vector';
 
 describe('vector2のテスト', () => {
   test('constructorのテスト', () => {
@@ -95,6 +95,11 @@ describe('vector2のテスト', () => {
 
     const v2 = new Vec2(0, 200);
     expect(v2.angle).toBe(Math.PI / 2);
+  });
+
+  test('vec3のテスト', () => {
+    const v1 = new Vec2(400, 400);
+    expect(v1.vec3).toEqual(new Vec3(400, 400, 0));
   });
 
   test('degreeのテスト', () => {

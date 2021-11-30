@@ -1,7 +1,7 @@
 import { Event } from '.';
 import { EventLitener } from '../../types';
 
-export class EventDispatcher<T> {
+export class EventDispatcher<T, X = any> {
   constructor() {
     this._eventListeners = new Map();
   }
@@ -9,7 +9,7 @@ export class EventDispatcher<T> {
 
   addEventListener<S extends keyof T & string>(
     eventType: S,
-    listener: (event: Event<T[S]>) => void
+    listener: (event: Event<T[S], X>) => void
   ): void {
     if (!this._eventListeners.has(eventType)) {
       this._eventListeners.set(eventType, [listener]);
@@ -20,7 +20,7 @@ export class EventDispatcher<T> {
 
   dispatchEvent<S extends keyof T & string>(
     eventType: S,
-    event: Event<T[S]>
+    event: Event<T[S], X>
   ): void {
     if (this._eventListeners.has(eventType)) {
       for (const listener of this._eventListeners.get(

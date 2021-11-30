@@ -1,3 +1,3 @@
-export abstract class Event<T = any> {
-  constructor(public target: T) {}
+export class Event<T = any, S = any> {
+  constructor(public target: T, public from?: S) {}
 }

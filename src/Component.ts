@@ -1,10 +1,12 @@
 import { GameObject } from '.';
 import { generateId } from './util/generateId';
 
-export abstract class Component {
-  constructor(public object: GameObject) {
+export class Component {
+  constructor(public gameObject: GameObject) {
     this.id = generateId();
+    this.gameObjectId = gameObject.id;
   }
   public id: string;
-  static type: string;
+  public gameObjectId: string;
+  public type = 'components';
 }

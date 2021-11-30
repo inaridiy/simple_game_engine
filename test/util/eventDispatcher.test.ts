@@ -1,8 +1,6 @@
 import { EventDispatcher, Event } from '../../src/util/event';
 import { BaseEventTypes } from '../../src';
 
-class TestEvent extends Event {}
-
 describe('EventDispatcherのテスト', () => {
   const eventDispatcher = new EventDispatcher<BaseEventTypes>();
   const mockCB1 = jest.fn<Event, any>();
@@ -22,12 +20,12 @@ describe('EventDispatcherのテスト', () => {
   });
 
   test('dispatchEventのテスト', () => {
-    eventDispatcher.dispatchEvent('test1', new TestEvent('Test'));
+    eventDispatcher.dispatchEvent('test1', new Event('Test'));
     expect(mockCB1.mock.calls.length).toBe(1);
-    eventDispatcher.dispatchEvent('test1', new TestEvent('Test'));
+    eventDispatcher.dispatchEvent('test1', new Event('Test'));
     expect(mockCB1.mock.calls.length).toBe(2);
     expect(() =>
-      eventDispatcher.dispatchEvent('test3', new TestEvent('Test'))
+      eventDispatcher.dispatchEvent('test3', new Event('Test'))
     ).toThrow();
   });
 
