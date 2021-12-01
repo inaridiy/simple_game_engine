@@ -1,7 +1,7 @@
 import { Component, GameObject, Root } from '..';
 
-export interface GameObjectOption {
-  root: Root;
+export interface GameObjectOption<T extends Component[] = []> {
+  root: Root<T>;
   parent?: GameObject;
   children?: GameObject[];
   tags?: string[];

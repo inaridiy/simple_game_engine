@@ -3,11 +3,10 @@ import { GameObjectOption, GameObjectDefaultEvents } from './types';
 import { EventDispatcher, Event } from './util/event';
 import { generateId } from './util/generateId';
 
-export abstract class GameObject extends EventDispatcher<
-  GameObjectDefaultEvents,
-  GameObject
-> {
-  constructor({ root, children, tags, parent }: GameObjectOption) {
+export abstract class GameObject<
+  RC extends Component[] = []
+> extends EventDispatcher<GameObjectDefaultEvents, GameObject<RC>> {
+  constructor({ root, children, tags, parent }: GameObjectOption<RC>) {
     super();
     this.id = generateId();
     this.root = root;
@@ -25,7 +24,7 @@ export abstract class GameObject extends EventDispatcher<
 
   private _ancestor: GameObject[] = [];
 
-  addComponent(component: Component): void {
+  addComponent<S extends RC[number] | Component>(component: S): void {
     this.root.components.add(component);
     this.dispatchEvent(
       'addComponent',
@@ -33,7 +32,7 @@ export abstract class GameObject extends EventDispatcher<
     );
   }
 
-  removeComponent(component: Component): void {
+  removeComponent<S extends RC[number] | Component>(component: S): void {
     this.root.components.remove(component);
     this.dispatchEvent(
       'removeComponent',
