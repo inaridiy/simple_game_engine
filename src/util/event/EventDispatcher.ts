@@ -1,6 +1,7 @@
 import { Event } from '.';
 import { EventLitener } from '../../types';
 
+// eslint-disable-next-line
 export class EventDispatcher<T, X = any> {
   constructor() {
     this._eventListeners = new Map();

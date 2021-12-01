@@ -1,7 +1,7 @@
-import { Root, GameObject, Component, Vec3, Vec2 } from '../../src';
+import { Root, Entity, Component, Vec3, Vec2 } from '../../src';
 
 class Position extends Component {
-  constructor(object: GameObject, x: number, y: number, z: number) {
+  constructor(object: Entity, x: number, y: number, z: number) {
     super(object);
     this.vec = new Vec3(x, y, z);
   }
@@ -28,7 +28,7 @@ class Position extends Component {
 }
 
 class Position2 extends Component {
-  constructor(object: GameObject, x: number, y: number) {
+  constructor(object: Entity, x: number, y: number) {
     super(object);
     this.vec = new Vec2(x, y);
   }
@@ -48,7 +48,7 @@ class Position2 extends Component {
   }
 }
 
-class TestObject extends GameObject {}
+class TestObject extends Entity {}
 
 const root = new Root<[Position, Position2]>();
 

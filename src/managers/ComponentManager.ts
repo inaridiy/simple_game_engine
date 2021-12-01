@@ -1,7 +1,7 @@
-import { Root, Component } from '..';
+import { World, Component } from '..';
 
 export class ComponentManager<T extends Component[]> {
-  constructor(public root: Root) {
+  constructor(public world: World) {
     this.components = new Map();
   }
 

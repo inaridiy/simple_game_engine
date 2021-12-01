@@ -1,6 +1,7 @@
 import { Event } from '../util/event';
 
 export interface BaseEventTypes {
+  // eslint-disable-next-line
   [s: string]: any;
 }
 

@@ -1,6 +1,6 @@
-import { Root } from '.';
+import { World } from '.';
 import { QueryInstructionTypes } from './types/QueryTypes';
 
 export class Query {
-  constructor(public root: Root) {}
+  constructor(public world: World) {}
 }

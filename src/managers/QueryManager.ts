@@ -1,9 +1,9 @@
-import { Root, GameObject } from '..';
+import { World, Entity } from '..';
 
 export class QueryManager {
-  constructor(root: Root) {
-    this.root = root;
+  constructor(world: World) {
+    this.world = world;
   }
-  private _cache: Map<string, Set<GameObject>> = new Map();
-  public root: Root;
+  private _cache: Map<string, Set<Entity>> = new Map();
+  public world: World;
 }

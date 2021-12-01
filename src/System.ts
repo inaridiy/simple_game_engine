@@ -1,4 +1,4 @@
-import { Root } from '.';
+import { World } from '.';
 export class System {
-  constructor(public root: Root) {}
+  constructor(public world: World) {}
 }

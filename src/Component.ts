@@ -1,12 +1,12 @@
-import { GameObject } from '.';
+import { Entity } from '.';
 import { generateId } from './util/generateId';
 
 export class Component {
-  constructor(public gameObject: GameObject) {
+  constructor(public Entity: Entity) {
     this.id = generateId();
-    this.gameObjectId = gameObject.id;
+    this.entityId = Entity.id;
   }
   public id: string;
-  public gameObjectId: string;
+  public entityId: string;
   public type = 'components';
 }
