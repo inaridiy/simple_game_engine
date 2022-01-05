@@ -1,5 +1,6 @@
 import { Event } from '.';
-import { EventLitener } from '../../types';
+
+export type EventLitener = <T extends Event>(event: T) => void;
 
 // eslint-disable-next-line
 export class EventDispatcher<T, X = any> {
