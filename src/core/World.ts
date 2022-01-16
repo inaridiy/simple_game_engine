@@ -1,18 +1,22 @@
-import { ComponentManager, EntityManager, Entity, Component } from '.';
+import { EntityManager, Entity, Component } from '.';
 
 export class World<Components extends Component[] = []> {
   constructor() {
     this.entities = new EntityManager(this);
-    this.components = new ComponentManager(this);
+    this.currentTick = 0;
   }
 
   public entities: EntityManager;
-  public components: ComponentManager<Components>;
+  public currentTick: number;
 
   addEntity(Entity: Entity): void {
     this.entities.addEntity(Entity);
   }
   removeEntity(Entity: Entity): void {
     this.entities.removeEntity(Entity);
+  }
+  update(): void {
+    this.currentTick++;
+    this.entities.update();
   }
 }

@@ -1,5 +1,5 @@
 import { Entity } from '.';
-import { generateId } from './util/generateId';
+import { generateId } from '../util/generateId';
 
 export class Component {
   constructor(public Entity: Entity) {
